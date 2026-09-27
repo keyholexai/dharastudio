@@ -67,7 +67,7 @@ export function DhaRaHeader({ activePath }: { activePath: DhaRaPath }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-dhara-ink/10 bg-dhara-ivory/95 backdrop-blur-sm lg:static lg:z-auto lg:backdrop-blur-none">
+    <header className="sticky top-0 z-50 border-b border-dhara-ink/10 bg-dhara-ivory/95 backdrop-blur-sm">
       <div className="dhara-container grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-5 lg:flex lg:justify-between">
         <Link to="/" className="group flex min-w-0 items-baseline gap-2" aria-label="DhaRa Studios & Films home">
           <span className="font-serif text-lg tracking-tight">DhaRa</span>

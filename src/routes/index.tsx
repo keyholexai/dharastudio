@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 
-import aboutFounderAsset from "@/assets/dhara-about-founder.webp.asset.json";
 import { useSiteImages } from "@/hooks/use-site-images";
 import { naturalPhotoFrameClass } from "@/lib/photo-frame";
 import { groupBySlot } from "@/lib/site-images";
@@ -94,7 +93,7 @@ function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { data: homeImages = [] } = useSiteImages("home");
   const bySlot = groupBySlot(homeImages);
-  const aboutImageUrl = bySlot["about"]?.url ?? aboutFounderAsset.url;
+  const aboutImageUrl = bySlot["about"]?.url ?? "/images/dhara-about-founder.webp";
   const aboutImageAlt = bySlot["about"]?.caption ?? "DhaRa Studios founder with camera";
 
   const heroImages = useMemo(
@@ -115,7 +114,7 @@ function Index() {
 
   return (
     <main id="home" className="min-h-screen bg-dhara-ivory text-dhara-ink antialiased">
-      <header className="border-b border-dhara-ink/10 bg-dhara-ivory/95">
+      <header className="sticky top-0 z-50 border-b border-dhara-ink/10 bg-dhara-ivory/95 backdrop-blur-sm">
         <div className="dhara-container grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-5 lg:flex lg:justify-between">
           <Link to="/" className="group flex min-w-0 items-baseline gap-2" aria-label="DhaRa Studios & Films home">
             <span className="font-serif text-lg tracking-tight">DhaRa</span>
@@ -344,6 +343,33 @@ function Index() {
             <div className="border-r border-dhara-ink/15 pr-8 sm:pr-10"><span className="font-serif text-3xl tracking-tight">2016</span><span className="mt-1 block text-[10px] uppercase tracking-[0.24em] text-dhara-mist">Established</span></div>
             <div className="border-r border-dhara-ink/15 pr-8 sm:pr-10"><span className="font-serif text-3xl tracking-tight">8+</span><span className="mt-1 block text-[10px] uppercase tracking-[0.24em] text-dhara-mist">Years of experience</span></div>
             <div><span className="font-serif text-lg tracking-tight">Weddings &amp; celebrations</span><span className="mt-1 block text-[10px] uppercase tracking-[0.24em] text-dhara-mist">Multi-disciplinary photography</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-dhara-ink/10" aria-labelledby="reviews-heading">
+        <div className="dhara-container py-20 lg:py-28">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="min-w-0 lg:col-span-4">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-dhara-champagne">07 — Kind words</span>
+              <h2 id="reviews-heading" className="mt-6 max-w-[14ch] font-serif text-[clamp(1.9rem,3.2vw,2.6rem)] leading-tight tracking-tight">The feeling, in their words.</h2>
+              <p className="mt-5 max-w-[34ch] text-[12px] leading-relaxed text-dhara-mist">Sample review copy — replace with verified client feedback.</p>
+            </div>
+            <div className="grid min-w-0 gap-x-8 gap-y-10 sm:grid-cols-2 lg:col-span-8">
+              {[
+                ["Wedding photography", "DhaRa Studios & Films brings a warm, thoughtful touch to wedding photography, celebrating meaningful traditions, genuine emotions, and the joy of togetherness."],
+                ["Maternity photography", "A gentle, reassuring approach to maternity photography, with soft imagery that celebrates anticipation, quiet strength, and the beauty of a growing family."],
+                ["Family photography", "Natural smiles, playful connections, and everyday affection make family photographs feel personal, creating a welcoming sense of warmth across generations."],
+                ["Portrait photography", "Thoughtful portrait photography that leaves room for individuality, balancing flattering light with natural expression for images that feel confident, approachable, and true."],
+                ["Product photography", "Clean, carefully styled product photography highlights textures, colours, and useful details, helping each item feel appealing while keeping its character in focus."],
+                ["Corporate photography", "Professional yet approachable corporate photography brings people and workplaces into focus, offering polished visuals with a human touch that feels welcoming and authentic."],
+              ].map(([service, quote]) => (
+                <figure key={service} className="border-t border-dhara-ink/15 pt-5">
+                  <blockquote className="font-serif text-[1rem] leading-[1.75] text-dhara-ink/80">“{quote}”</blockquote>
+                  <figcaption className="mt-5 text-[10px] uppercase tracking-[0.24em] text-dhara-mist">{service}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import aboutFounderAsset from "@/assets/dhara-about-founder.webp.asset.json";
 import {
   DhaRaMediaFrame,
   DhaRaPage,
@@ -37,7 +36,7 @@ function AboutPage() {
               format="04"
               type="About DhaRa"
               className="dhara-reveal dhara-delay-2 aspect-[3/4] w-full"
-              src={aboutFounderAsset.url}
+              src="/images/dhara-about-founder.webp"
               alt="DhaRa Studios founder with camera"
             />
           </div>

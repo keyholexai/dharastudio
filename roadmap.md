@@ -10,3 +10,6 @@
 - [x] Make home hero photos load faster, including lighter future uploads.
 - [x] Fix the About page mobile layout and keep the mobile menu accessible while scrolling.
 - [x] Add admin photo destinations for every Experience page section and display those photos.
+- [x] Keep the desktop navigation visible while scrolling on every public page.
+- [x] Serve the About portrait from a Vercel-compatible bundled path.
+- [x] Add six clearly labelled sample reviews near the bottom of the home page.
