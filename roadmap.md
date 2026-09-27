@@ -1,0 +1,12 @@
+- [x] Read the approved continuation brief and preserve the homepage design system.
+- [x] Add shared DhaRa shell and intentional media placeholder treatment for internal pages.
+- [x] Build About, Work, Experience, and Contact pages with page-specific metadata.
+- [x] Verify all four pages in the running preview at desktop and mobile widths.
+- [x] Add admin area at /admin: sign in, first-account admin claim, upload and remove images.
+- [x] Show uploaded images in home page frames and gallery categories, placeholders as fallback.
+- [x] Mobile responsiveness polish pass (footer and 12-column sections) — re-audited.
+- [x] Add the uploaded founder photo to the About page frame.
+- [x] Let uploaded website photos display in their natural photo ratio.
+- [x] Make home hero photos load faster, including lighter future uploads.
+- [x] Fix the About page mobile layout and keep the mobile menu accessible while scrolling.
+- [x] Add admin photo destinations for every Experience page section and display those photos.

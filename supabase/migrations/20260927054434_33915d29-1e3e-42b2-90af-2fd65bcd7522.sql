@@ -1,0 +1,2 @@
+ALTER TABLE public.site_images DROP CONSTRAINT site_images_placement_check;
+ALTER TABLE public.site_images ADD CONSTRAINT site_images_placement_check CHECK (placement IN ('home', 'gallery', 'experience'));
